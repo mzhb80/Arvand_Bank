@@ -56,6 +56,9 @@ export default defineConfig({
       },
     },
   },
+  rules: [
+    ['shadow', { 'box-shadow': '0px 4px 5px -2px rgba(0, 0, 0, 0.03)'}]
+  ],
   shortcuts: {
     'text-display-1': 'text-64px font-600',
     'text-display-2': 'text-56px font-600',
@@ -75,6 +78,6 @@ export default defineConfig({
     'text-button-1': 'text-16px font-400',
     'text-button-2': 'text-14px font-400',
     'text-overline-1': 'text-16px font-400',
-    'text-overline-2': 'text-12px font-600'
+    'text-overline-2': 'text-12px font-600',
   }
 })
