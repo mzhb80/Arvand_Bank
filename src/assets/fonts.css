@@ -1,0 +1,5 @@
+@import url(./fonts/iranSans/iranSans.css);
+
+* {
+    font-family: iranSans;
+}

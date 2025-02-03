@@ -1,0 +1,90 @@
+@font-face {
+  font-family: iranSans;
+  src: url('IranSans-UltraLight-FD.woff2') format('woff2');
+  font-weight: 100 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url('IranSans-Light-FD.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url('IranSans-FD.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url('IranSans-Medium-FD.woff2') format('woff2');
+  font-weight: 500 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url('IranSans-Bold-FD.woff2') format('woff2');
+  font-weight: 700 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans;
+  src: url('IranSans-Black-FD.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: iranSans-en-number;
+  src: url('IranSans-UltraLight.woff2') format('woff2');
+  font-weight: 100 200;
+  unicode-range: U+0030-0039;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans-en-number;
+  src: url('IranSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  unicode-range: U+0030-0039;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans-en-number;
+  src: url('IranSans.woff2') format('woff2');
+  font-weight: 400;
+  unicode-range: U+0030-0039;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans-en-number;
+  src: url('IranSans-Medium.woff2') format('woff2');
+  font-weight: 500 600;
+  unicode-range: U+0030-0039;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans-en-number;
+  src: url('IranSans-Bold.woff2') format('woff2');
+  font-weight: 700 800;
+  unicode-range: U+0030-0039;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranSans-en-number;
+  src: url('IranSans-Black.woff2') format('woff2');
+  font-weight: 900;
+  unicode-range: U+0030-0039;
+  font-display: swap;
+}
