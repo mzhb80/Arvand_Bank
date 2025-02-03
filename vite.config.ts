@@ -10,7 +10,13 @@ import UnoCSS from 'unocss/vite'
 export default defineConfig({
   plugins: [
     UnoCSS(),
-    vue(),
+    vue({
+      template: {
+        transformAssetUrls: {
+          BaseIcon: ['src']
+        }
+      }
+    }),
     vueDevTools(),
     VitePWA({
       registerType: 'autoUpdate',
