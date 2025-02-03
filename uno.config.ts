@@ -54,6 +54,27 @@ export default defineConfig({
       chart: {
         DEFAULT: '#1ECEE9',
       },
-    }
+    },
+  },
+  shortcuts: {
+    'text-display-1': 'text-64px font-600',
+    'text-display-2': 'text-56px font-600',
+    'text-heading-1': 'text-44px font-600',
+    'text-heading-2': 'text-40px font-600',
+    'text-heading-3': 'text-32px font-600',
+    'text-heading-4': 'text-24px font-600',
+    'text-heading-5': 'text-20px font-600',
+    'text-heading-6': 'text-16px font-600',
+    'text-body-1': 'text-20px font-400',
+    'text-body-2': 'text-18px font-400',
+    'text-body-3': 'text-16px font-500',
+    'text-body-4': 'text-16px font-400',
+    'text-body-5': 'text-14px font-500',
+    'text-caption-1': 'text-14px font-600',
+    'text-caption-2': 'text-12px font-400',
+    'text-button-1': 'text-16px font-400',
+    'text-button-2': 'text-14px font-400',
+    'text-overline-1': 'text-16px font-400',
+    'text-overline-2': 'text-12px font-600'
   }
 })
