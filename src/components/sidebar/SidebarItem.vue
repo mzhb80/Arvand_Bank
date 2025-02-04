@@ -2,7 +2,7 @@
 export type SidebarItemType = {
     text: string
     icon: string
-    link: string
+    link?: string
     showText: boolean
     subItems?: {
         text: string
@@ -62,10 +62,10 @@ function handleMouseLeave() {
 <template>
     <div>
         <button @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave" @click="handleClick"
-            class="flex items-center px-3 py-10px rounded-2 transition-colors duration-500"
+            class="w-full text-start flex items-center px-3 py-10px rounded-2 transition-colors duration-500"
             :class="[config[state].bgColor, config[state].textColor]">
             <BaseIcon :src="props.icon" class="s-6" :class="config[state].iconColor" />
-            <span class="ms-2 text-body-4">{{ text }}</span>
+            <span class="ms-2 text-body-4 grow min-w-0">{{ text }}</span>
             <BaseIcon src="@/assets/icons/angle-left-small.svg" class="s-6 ms-2" :class="[config[state].iconColor, { 'rotate-90': showSubItems}]" />
         </button>
         <Transition name="fade">
