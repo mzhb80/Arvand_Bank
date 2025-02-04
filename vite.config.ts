@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { VitePWA } from 'vite-plugin-pwa'
 import UnoCSS from 'unocss/vite'
+import svgLoader from 'vite-svg-loader'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -14,8 +15,11 @@ export default defineConfig({
       template: {
         transformAssetUrls: {
           BaseIcon: ['src']
-        }
-      }
+        },
+      },
+    }),
+    svgLoader({
+      defaultImport: 'raw',
     }),
     vueDevTools(),
     VitePWA({
