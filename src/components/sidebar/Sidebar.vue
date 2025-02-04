@@ -7,6 +7,8 @@ import CreditCard from '@/assets/icons/credit-card.svg'
 import MoneyBillConvert from '@/assets/icons/money-bill-convert.svg'
 import SheildLock from '@/assets/icons/sheild-lock.svg'
 import UsersGroups from '@/assets/icons/users-groups.svg'
+import { useBreakpoints, breakpointsTailwind } from '@vueuse/core';
+import { computed, watchEffect } from 'vue';
 
 const sidebarItems: SidebarItemType[] = [
     { 
@@ -87,6 +89,8 @@ const sidebarItems: SidebarItemType[] = [
         ]
     },
 ]
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
 </script>
 
 <template>
