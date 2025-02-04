@@ -13,7 +13,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'داشبورد',
         link: '/',
         icon: ChartLineDots,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -25,7 +24,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'مدیریت حساب',
         link: '/',
         icon: MoneyBills,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -37,7 +35,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'پرداخت',
         link: '/',
         icon: CoinCardTransfer,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -49,7 +46,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'خدمات کارت',
         link: '/',
         icon: CreditCard,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -61,7 +57,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'مدیریت وام',
         link: '/',
         icon: MoneyBillConvert,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -73,7 +68,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'امنیت و تنظیمات',
         link: '/',
         icon: SheildLock,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -85,7 +79,6 @@ const sidebarItems: SidebarItemType[] = [
         text: 'خدمات مشتریان',
         link: '/',
         icon: UsersGroups,
-        showText: true,
         subItems: [
             { link: '/1', text: 'تست 1', },
             { link: '/2', text: 'تست 2', },
@@ -99,6 +92,6 @@ const sidebarItems: SidebarItemType[] = [
 <template>
     <div class="border-e-1 p-6 h-100vh">
         <SidebarItem v-for="item, index in sidebarItems" :key="index" :icon="item.icon" :link="item.link"
-            :show-text="item.showText" :sub-items="item.subItems" :text="item.text" />
+            :show-text="true" :sub-items="item.subItems" :text="item.text" />
     </div>
 </template>
