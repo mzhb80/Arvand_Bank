@@ -1,14 +1,4 @@
 <script lang="ts">
-export type SidebarItemType = {
-    text: string
-    icon: string
-    link?: string
-    subItems?: {
-        text: string
-        link: string
-    }[]
-}
-
 const config = {
     default: {
         textColor: 'text-black',
@@ -36,6 +26,7 @@ const config = {
 <script setup lang="ts">
 import { ref } from 'vue';
 import BaseIcon from '../base/BaseIcon.vue';
+import type { SidebarItemType } from '@/datasource/static/sidebar';
 
 type SidebarState = 'default' | 'hover' | 'active' | 'active-submenu'
 
