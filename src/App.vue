@@ -5,7 +5,7 @@ import Sidebar from './components/sidebar/Sidebar.vue';
 
 <template>
   <div class="flex">
-    <Sidebar />
+    <Sidebar class="shrink-0" />
     <div class="grow min-w-0">
       <RouterView />
     </div>
