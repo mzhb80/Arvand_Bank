@@ -91,11 +91,13 @@ const sidebarItems: SidebarItemType[] = [
 ]
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
+
+const showText = computed(() => breakpoints.greaterOrEqual('md').value)
 </script>
 
 <template>
     <div class="border-e-1 p-6 h-100vh">
         <SidebarItem v-for="item, index in sidebarItems" :key="index" :icon="item.icon" :link="item.link"
-            :show-text="true" :sub-items="item.subItems" :text="item.text" />
+            :show-text="showText" :sub-items="item.subItems" :text="item.text" />
     </div>
 </template>
