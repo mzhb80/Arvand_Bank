@@ -51,10 +51,10 @@ const emit = defineEmits<{
     (event: 'append-icon-click'): void
 }>()
 
-const { value: modelValue, errors } = useField<string>(() => props.name)
+const { value: modelValue, errors } = useField<string | number>(() => props.name)
 
 const inputSize = computed(() => props.size ?? 40)
-const canDisplayPlaceholder = computed(() => props.placeholder && !modelValue.value.length)
+const canDisplayPlaceholder = computed(() => props.placeholder && !String(modelValue.value).length)
 
 
 const state = ref<InputState>('default')
