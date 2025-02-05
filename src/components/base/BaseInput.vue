@@ -1,6 +1,6 @@
 <script lang="ts">
 export type InputType = {
-    id: string
+    name: string
     type: HTMLInputElement['type']
     placeholder?: string
     size?: 40 | 48
@@ -38,19 +38,20 @@ const config = {
 </script>
 
 <script setup lang="ts">
-import { computed, ref, watchEffect } from 'vue';
+import { computed, ref } from 'vue';
 import BaseIcon from './BaseIcon.vue';
+import { useField, useForm } from 'vee-validate';
 
 type InputState = 'default' | 'disabled' | 'selected' | 'error'
 
 const props = defineProps<InputType>()
 
 const emit = defineEmits<{
-    (event: 'prepend-icon-click'): void 
-    (event: 'append-icon-click'): void 
+    (event: 'prepend-icon-click'): void
+    (event: 'append-icon-click'): void
 }>()
 
-const modelValue = defineModel<string>({ required: true })
+const { value: modelValue, errors } = useField<string>(() => props.name)
 
 const inputSize = computed(() => props.size ?? 40)
 const canDisplayPlaceholder = computed(() => props.placeholder && !modelValue.value.length)
@@ -60,26 +61,20 @@ const state = ref<InputState>('default')
 </script>
 
 <template>
-    <label 
-        :for="id"
-        class="flex items-center ps-4 rounded-2 border-1 relative"
-        :class="[inputSize === 40 ? 'h-40px' : 'h-48px', config[state].bgClass, config[state].borderClass]"
-    >
-        <button @click="emit('prepend-icon-click')">
-            <BaseIcon v-if="prependIcon" :src="prependIcon" class="s-6" :class="config[state].iconClass" />
-        </button>
-        <span v-if="canDisplayPlaceholder" class="text-caption-1 absolute" :class="[config[state].placeholderClass, prependIcon ? 'start-11' : 'start-4']">{{ placeholder }}</span>
-        <input 
-            v-model="modelValue"
-            :id="id"
-            @focus="state = 'selected'"
-            @blur="state = 'default'"
-            :type="type"
-            class="border-none outline-none text-black text-caption-1 grow"
-            :class="{'text-center': textCenter}"
-        >
-        <button @click="emit('append-icon-click')">
-            <BaseIcon v-if="appendIcon" :src="appendIcon" class="s-6 me-4" :class="config[state].iconClass" />
-        </button>
-    </label>
+    <div>
+        <label :for="name" class="flex items-center ps-4 rounded-2 border-1 relative"
+            :class="[inputSize === 40 ? 'h-40px' : 'h-48px', config[state].bgClass, config[state].borderClass]">
+            <button @click="emit('prepend-icon-click')">
+                <BaseIcon v-if="prependIcon" :src="prependIcon" class="s-6" :class="config[state].iconClass" />
+            </button>
+            <span v-if="canDisplayPlaceholder" class="text-caption-1 absolute"
+                :class="[config[state].placeholderClass, prependIcon ? 'start-11' : 'start-4']">{{ placeholder }}</span>
+            <input v-model="modelValue" :id="name" @focus="state = 'selected'" @blur="state = 'default'" :type="type"
+                class="border-none outline-none text-black text-caption-1 grow" :class="{ 'text-center': textCenter }">
+            <button @click="emit('append-icon-click')">
+                <BaseIcon v-if="appendIcon" :src="appendIcon" class="s-6 me-4" :class="config[state].iconClass" />
+            </button>
+        </label>
+        <span v-if="errors[0]">{{ errors[0] }}</span>
+    </div>
 </template>

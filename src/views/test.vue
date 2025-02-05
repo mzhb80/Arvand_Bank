@@ -3,8 +3,18 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import { ref } from 'vue';
 import Bank from '@/assets/icons/bank.svg'
 import InputPassword from '@/components/InputPassword.vue';
+import { useForm } from 'vee-validate';
 
 const inputTest1 = ref('')
+
+useForm({
+    initialValues: {
+        test1: '',
+        test2: '',
+        test3: '',
+        test4: '',
+    }
+})
 </script>
 
 <template>
@@ -69,10 +79,10 @@ const inputTest1 = ref('')
         <p class="text-overline-2">بانک اروند</p>
         <h1 class="mt-4">Inputs</h1>
         <div class="p-10 grid grid-cols-1 gap-y-4">
-            <BaseInput id="test1" type="text" placeholder="تست" v-model="inputTest1" />
-            <BaseInput id="test2" type="text" :size="48" placeholder="تست" v-model="inputTest1" />
-            <BaseInput id="test3" type="text" :size="48" placeholder="تست" v-model="inputTest1" :prepend-icon="Bank" />
-            <InputPassword id="test4" v-model="inputTest1" placeholder="رمز عبور" />
+            <BaseInput name="test1" type="text" placeholder="تست" v-model="inputTest1" />
+            <BaseInput name="test2" type="text" :size="48" placeholder="تست" v-model="inputTest1" />
+            <BaseInput name="test3" type="text" :size="48" placeholder="تست" v-model="inputTest1" :prepend-icon="Bank" />
+            <InputPassword name="test4" v-model="inputTest1" placeholder="رمز عبور" />
         </div>
     </div>
 </template>

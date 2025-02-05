@@ -6,12 +6,11 @@ import EyeSlash from '@/assets/icons/eye-slash.svg'
 
 const props = defineProps<Omit<InputType, 'type' | 'appendIcon'>>()
 const showPassword = ref(false)
-const modelValue = defineModel<string>({ required: true })
 
 const type = computed(() => showPassword.value ? 'text' : 'password')
 const appendIcon = computed(() => showPassword.value ? EyeSlash : Eye)
 </script>
 
 <template>
-    <BaseInput v-bind="props" :type="type" v-model="modelValue" :append-icon="appendIcon" @append-icon-click="showPassword = !showPassword" />
+    <BaseInput v-bind="props" :type="type" :append-icon="appendIcon" @append-icon-click="showPassword = !showPassword" />
 </template>
