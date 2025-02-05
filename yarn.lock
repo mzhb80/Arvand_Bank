@@ -1656,6 +1656,14 @@
     magic-string "^0.30.17"
     tinyglobby "^0.2.10"
 
+"@vee-validate/yup@^4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@vee-validate/yup/-/yup-4.15.0.tgz#409f9b57414fadd5b86bc6ada18cd51a7ccd121c"
+  integrity sha512-paK2ZdxZJRrUGwqaqf7KMNC+n5C7UGs7DofK7wZCza/zKT/QtFSxVYgopGoYYrbAfd6DpVmNpf/ouBuRdPBthA==
+  dependencies:
+    type-fest "^4.8.3"
+    vee-validate "4.15.0"
+
 "@vitejs/plugin-vue@^5.2.1":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-5.2.1.tgz#d1491f678ee3af899f7ae57d9c21dc52a65c7133"
@@ -4862,7 +4870,7 @@ update-browserslist-db@^1.1.1:
     escalade "^3.2.0"
     picocolors "^1.1.1"
 
-vee-validate@^4.15.0:
+vee-validate@4.15.0, vee-validate@^4.15.0:
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-4.15.0.tgz#eb77a9c867669d34abbc33ca5e16f2a991eb7ad5"
   integrity sha512-PGJh1QCFwCBjbHu5aN6vB8macYVWrajbDvgo1Y/8fz9n/RVIkLmZCJDpUgu7+mUmCOPMxeyq7vXUOhbwAqdXcA==
