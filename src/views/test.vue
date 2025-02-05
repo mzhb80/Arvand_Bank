@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import BaseInput from '@/components/base/BaseInput.vue';
+import { ref } from 'vue';
+import Bank from '@/assets/icons/bank.svg'
 
+const inputTest1 = ref('')
 </script>
 
 <template>
@@ -62,5 +66,11 @@
         <p class="text-button-2">بانک اروند</p>
         <p class="text-overline-1">بانک اروند</p>
         <p class="text-overline-2">بانک اروند</p>
+        <h1 class="mt-4">Inputs</h1>
+        <div class="p-10 grid grid-cols-1 gap-y-4">
+            <BaseInput id="test1" type="text" placeholder="تست" v-model="inputTest1" />
+            <BaseInput id="test1" type="text" :size="48" placeholder="تست" v-model="inputTest1" />
+            <BaseInput id="test1" type="text" :size="48" placeholder="تست" v-model="inputTest1" :prepend-icon="Bank" />
+        </div>
     </div>
 </template>
