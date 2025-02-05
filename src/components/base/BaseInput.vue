@@ -1,4 +1,14 @@
 <script lang="ts">
+export type InputType = {
+    id: string
+    type: HTMLInputElement['type']
+    placeholder?: string
+    size?: 40 | 48
+    prependIcon?: string
+    textCenter?: boolean
+    appendIcon?: string
+}
+
 const config = {
     default: {
         borderClass: 'border-gray-7',
@@ -33,14 +43,11 @@ import BaseIcon from './BaseIcon.vue';
 
 type InputState = 'default' | 'disabled' | 'selected' | 'error'
 
-const props = defineProps<{
-    id: string
-    type: HTMLInputElement['type']
-    placeholder?: string
-    size?: 40 | 48
-    prependIcon?: string
-    textCenter?: boolean
-    appendIcon?: string
+const props = defineProps<InputType>()
+
+const emit = defineEmits<{
+    (event: 'prepend-icon-click'): void 
+    (event: 'append-icon-click'): void 
 }>()
 
 const modelValue = defineModel<string>({ required: true })
@@ -58,7 +65,9 @@ const state = ref<InputState>('default')
         class="flex items-center ps-4 rounded-2 border-1 relative"
         :class="[inputSize === 40 ? 'h-40px' : 'h-48px', config[state].bgClass, config[state].borderClass]"
     >
-        <BaseIcon v-if="prependIcon" :src="prependIcon" class="s-6" :class="config[state].iconClass" />
+        <button @click="emit('prepend-icon-click')">
+            <BaseIcon v-if="prependIcon" :src="prependIcon" class="s-6" :class="config[state].iconClass" />
+        </button>
         <span v-if="canDisplayPlaceholder" class="text-caption-1 absolute" :class="[config[state].placeholderClass, prependIcon ? 'start-11' : 'start-4']">{{ placeholder }}</span>
         <input 
             v-model="modelValue"
@@ -69,6 +78,8 @@ const state = ref<InputState>('default')
             class="border-none outline-none text-black text-caption-1 grow"
             :class="{'text-center': textCenter}"
         >
-        <BaseIcon v-if="appendIcon" :src="appendIcon" class="s-6 me-4" :class="config[state].iconClass" />
+        <button @click="emit('append-icon-click')">
+            <BaseIcon v-if="appendIcon" :src="appendIcon" class="s-6 me-4" :class="config[state].iconClass" />
+        </button>
     </label>
 </template>
