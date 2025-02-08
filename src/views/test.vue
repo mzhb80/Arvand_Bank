@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import BaseInput from '@/components/base/BaseInput.vue';
-import { ref } from 'vue';
 import Bank from '@/assets/icons/bank.svg'
 import InputPassword from '@/components/InputPassword.vue';
 import { useForm } from 'vee-validate';
 import InputNumber from '@/components/InputNumber.vue';
 import TwoFACode from '@/components/TwoFACode.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
 
 useForm({
     initialValues: {
@@ -88,5 +88,7 @@ useForm({
             <InputNumber name="test5" placeholder="عدد" />
             <TwoFACode name="test6" />
         </div>
+        <h1 class="mt-4">Buttons</h1>
+        <BaseButton>test</BaseButton>
     </div>
 </template>
