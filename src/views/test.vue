@@ -5,6 +5,7 @@ import Bank from '@/assets/icons/bank.svg'
 import InputPassword from '@/components/InputPassword.vue';
 import { useForm } from 'vee-validate';
 import InputNumber from '@/components/InputNumber.vue';
+import TwoFACode from '@/components/TwoFACode.vue';
 
 useForm({
     initialValues: {
@@ -13,6 +14,7 @@ useForm({
         test3: '',
         test4: '',
         test5: undefined,
+        test6: '',
     }
 })
 </script>
@@ -84,6 +86,7 @@ useForm({
             <BaseInput name="test3" type="text" :size="48" placeholder="تست" :prepend-icon="Bank" />
             <InputPassword name="test4" placeholder="رمز عبور" />
             <InputNumber name="test5" placeholder="عدد" />
+            <TwoFACode name="test6" />
         </div>
     </div>
 </template>

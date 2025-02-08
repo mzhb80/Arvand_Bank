@@ -75,6 +75,6 @@ const state = ref<InputState>('default')
                 <BaseIcon v-if="appendIcon" :src="appendIcon" class="s-6 me-4" :class="config[state].iconClass" />
             </button>
         </label>
-        <span v-if="errors[0]">{{ errors[0] }}</span>
+        <span class="text-error-1 mt-2 text-caption-2" v-if="errors[0]">{{ errors[0] }}</span>
     </div>
 </template>
