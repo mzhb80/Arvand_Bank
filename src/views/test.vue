@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import BaseInput from '@/components/base/BaseInput.vue';
-import { ref } from 'vue';
 import Bank from '@/assets/icons/bank.svg'
 import InputPassword from '@/components/InputPassword.vue';
 import { useForm } from 'vee-validate';
 import InputNumber from '@/components/InputNumber.vue';
 import TwoFACode from '@/components/TwoFACode.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
 
 useForm({
     initialValues: {
@@ -87,6 +87,156 @@ useForm({
             <InputPassword name="test4" placeholder="رمز عبور" />
             <InputNumber name="test5" placeholder="عدد" />
             <TwoFACode name="test6" />
+        </div>
+        <h1 class="mt-4">Buttons</h1>
+        <div class="flex items-center flex-wrap flex-gap-1">
+            <BaseButton>تست</BaseButton>
+            <BaseButton size="48">تست</BaseButton>
+            <BaseButton size="56">تست</BaseButton>
+            <BaseButton style-type="outline">تست</BaseButton>
+            <BaseButton style-type="outline" size="48">تست</BaseButton>
+            <BaseButton style-type="outline" size="56">تست</BaseButton>
+            <BaseButton style-type="text">تست</BaseButton>
+            <BaseButton style-type="text" size="48">تست</BaseButton>
+            <BaseButton style-type="text" size="56">تست</BaseButton>
+            <BaseButton disabled>تست</BaseButton>
+            <BaseButton disabled size="48">تست</BaseButton>
+            <BaseButton disabled size="56">تست</BaseButton>
+            <BaseButton disabled style-type="outline">تست</BaseButton>
+            <BaseButton disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton disabled style-type="text">تست</BaseButton>
+            <BaseButton disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton disabled style-type="text" size="56">تست</BaseButton>
+            <BaseButton color="neutral">تست</BaseButton>
+            <BaseButton color="neutral" size="48">تست</BaseButton>
+            <BaseButton color="neutral" size="56">تست</BaseButton>
+            <BaseButton color="neutral" style-type="outline">تست</BaseButton>
+            <BaseButton color="neutral" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton color="neutral" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton color="neutral" style-type="text">تست</BaseButton>
+            <BaseButton color="neutral" style-type="text" size="48">تست</BaseButton>
+            <BaseButton color="neutral" style-type="text" size="56">تست</BaseButton>
+            <BaseButton color="neutral" disabled>تست</BaseButton>
+            <BaseButton color="neutral" disabled size="48">تست</BaseButton>
+            <BaseButton color="neutral" disabled size="56">تست</BaseButton>
+            <BaseButton color="neutral" disabled style-type="outline">تست</BaseButton>
+            <BaseButton color="neutral" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton color="neutral" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton color="neutral" disabled style-type="text">تست</BaseButton>
+            <BaseButton color="neutral" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton color="neutral" disabled style-type="text" size="56">تست</BaseButton>
+
+            <BaseButton :prepend-icon="Bank">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" style-type="outline">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" style-type="text">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" style-type="text" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" style-type="text" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled>تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled style-type="outline">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled style-type="text">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" disabled style-type="text" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" style-type="outline">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" style-type="text">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" style-type="text" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" style-type="text" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled>تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled style-type="outline">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled style-type="text">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton :prepend-icon="Bank" color="neutral" disabled style-type="text" size="56">تست</BaseButton>
+
+            <BaseButton :append-icon="Bank">تست</BaseButton>
+            <BaseButton :append-icon="Bank" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" style-type="text" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled>تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" disabled style-type="text" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" style-type="text" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled>تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" color="neutral" disabled style-type="text" size="56">تست</BaseButton>
+
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" style-type="text" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled>تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" disabled style-type="text" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" style-type="text" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled>تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="outline">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="outline" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="outline" size="56">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="text">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="text" size="48">تست</BaseButton>
+            <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="text" size="56">تست</BaseButton>
         </div>
     </div>
 </template>
