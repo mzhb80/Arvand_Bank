@@ -4,115 +4,44 @@ type ButtonState = 'default' | 'hover' | 'disabled'
 const config = {
     primary: {
         fill: {
-            default: {
-                bgClass: 'bg-primary-500',
-                borderClass: '',
-                textClass: 'text-white',
-            },
-            hover: {
-                bgClass: 'bg-primary-600',
-                borderClass: '',
-                textClass: 'text-white',
-            },
-            disabled: {
-                bgClass: 'bg-gray-9',
-                borderClass: '',
-                textClass: 'text-gray-4',
-            },
+            bgClass: 'bg-primary-500 hover:bg-primary-600 disabled:bg-gray-9',
+            borderClass: '',
+            textClass: 'text-white disabled:text-gray-4',
         },
         outline: {
-            default: {
-                bgClass: '',
-                borderClass: 'border-primary-500',
-                textClass: 'text-primary-500',
-            },
-            hover: {
-                bgClass: '',
-                borderClass: 'border-primary-600',
-                textClass: 'text-primary-600',
-            },
-            disabled: {
-                bgClass: '',
-                borderClass: 'border-gray-4',
-                textClass: 'text-gray-4',
-            },
+            bgClass: '',
+            borderClass: 'border-primary-500 hover:border-primary-600 disabled:border-gray-4',
+            textClass: 'text-primary-500 hover:text-primary-600 disabled:text-gray-4',
+
         },
         text: {
-            default: {
-                bgClass: '',
-                borderClass: 'border-transparent',
-                textClass: 'text-primary-500',
-            },
-            hover: {
-                bgClass: '',
-                borderClass: 'border-transparent',
-                textClass: 'text-primary-600',
-            },
-            disabled: {
-                bgClass: '',
-                borderClass: 'border-transparent',
-                textClass: 'text-gray-4',
-            },
+            bgClass: '',
+            borderClass: 'border-transparent',
+            textClass: 'text-primary-500 hover:text-primary-600 disabled:text-gray-4',
         },
     },
     neutral: {
         fill: {
-            default: {
-                bgClass: 'bg-black',
-                borderClass: '',
-                textClass: 'text-white',
-            },
-            hover: {
-                bgClass: 'bg-gray-1',
-                borderClass: '',
-                textClass: 'text-white',
-            },
-            disabled: {
-                bgClass: 'bg-gray-3',
-                borderClass: '',
-                textClass: 'text-white',
-            },
+            bgClass: 'bg-black hover:bg-gray-1 disabled:bg-gray-3',
+            borderClass: '',
+            textClass: 'text-white',
+
         },
         outline: {
-            default: {
-                bgClass: '',
-                borderClass: 'border-gray-1',
-                textClass: 'text-gray-1',
-            },
-            hover: {
-                bgClass: '',
-                borderClass: 'border-gray-2',
-                textClass: 'text-gray-2',
-            },
-            disabled: {
-                bgClass: '',
-                borderClass: 'border-gray-3',
-                textClass: 'border-gray-3',
-            },
+            bgClass: '',
+            borderClass: 'border-gray-1 hover:border-gray-2 disabled:border-gray-3',
+            textClass: 'text-gray-1 hover:text-gray-2 disabled:text-gray-3',
         },
         text: {
-            default: {
-                bgClass: '',
-                borderClass: 'border-transparent',
-                textClass: 'text-gray-1',
-            },
-            hover: {
-                bgClass: '',
-                borderClass: 'border-transparent',
-                textClass: 'text-gray-2',
-            },
-            disabled: {
-                bgClass: '',
-                borderClass: 'border-transparent',
-                textClass: 'text-gray-3',
-            },
+            bgClass: '',
+            borderClass: 'border-transparent',
+            textClass: 'text-gray-1 hover:text-gray-2 disabled:text-gray-3',
         },
     },
 }
 </script>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import BaseIcon from './BaseIcon.vue';
 
 const props = withDefaults(defineProps<{
@@ -127,28 +56,14 @@ const props = withDefaults(defineProps<{
     size: '40',
     styleType: 'fill',
 })
-
-const state = ref<ButtonState>(props.disabled ? 'disabled' : 'default')
-
-function handleMouseEnter() {
-    if (props.disabled) return
-    state.value = 'hover'
-}
-
-function handleMouseLeave() {
-    if (props.disabled) return
-    state.value = 'default'
-}
 </script>
 
 <template>
-    <button
-        v-bind="$attrs"
-        class="flex items-center px-10px rounded-2 outline-none text-button-1 transition-colors border-1"
-        :class="[
-            config[color][styleType][state].bgClass,
-            config[color][styleType][state].borderClass,
-            config[color][styleType][state].textClass,
+    <button v-bind="$attrs"
+        class="flex items-center px-10px rounded-2 outline-none text-button-1 transition-colors border-1" :class="[
+            config[color][styleType].bgClass,
+            config[color][styleType].borderClass,
+            config[color][styleType].textClass,
             {
                 'h-10': size === '40',
                 'h-48px': size === '48',
@@ -156,8 +71,7 @@ function handleMouseLeave() {
                 'pointer-events-none': disabled,
             }
         ]"
-        @mouseenter="handleMouseEnter"
-        @mouseleave="handleMouseLeave"
+        :disabled="disabled"
     >
         <BaseIcon v-if="prependIcon" :src="prependIcon" class="s-5" />
         <span class="mx-2 flex items-center justify-center">
