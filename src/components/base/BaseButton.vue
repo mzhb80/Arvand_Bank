@@ -40,17 +40,17 @@ const config = {
         text: {
             default: {
                 bgClass: '',
-                borderClass: '',
+                borderClass: 'border-transparent',
                 textClass: 'text-primary-500',
             },
             hover: {
                 bgClass: '',
-                borderClass: '',
+                borderClass: 'border-transparent',
                 textClass: 'text-primary-600',
             },
             disabled: {
                 bgClass: '',
-                borderClass: '',
+                borderClass: 'border-transparent',
                 textClass: 'text-gray-4',
             },
         },
@@ -93,17 +93,17 @@ const config = {
         text: {
             default: {
                 bgClass: '',
-                borderClass: '',
+                borderClass: 'border-transparent',
                 textClass: 'text-gray-1',
             },
             hover: {
                 bgClass: '',
-                borderClass: '',
+                borderClass: 'border-transparent',
                 textClass: 'text-gray-2',
             },
             disabled: {
                 bgClass: '',
-                borderClass: '',
+                borderClass: 'border-transparent',
                 textClass: 'text-gray-3',
             },
         },
@@ -144,7 +144,7 @@ function handleMouseLeave() {
 <template>
     <button
         v-bind="$attrs"
-        class="flex items-center ps-10px pe-4 rounded-2 outline-none text-button-1 transition-colors"
+        class="flex items-center px-10px rounded-2 outline-none text-button-1 transition-colors border-1"
         :class="[
             config[color][styleType][state].bgClass,
             config[color][styleType][state].borderClass,
@@ -153,6 +153,7 @@ function handleMouseLeave() {
                 'h-10': size === '40',
                 'h-48px': size === '48',
                 'h-56px': size === '56',
+                'pointer-events-none': disabled,
             }
         ]"
         @mouseenter="handleMouseEnter"
