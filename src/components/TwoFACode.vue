@@ -6,7 +6,7 @@ const props = defineProps<{
     name: string
 }>()
 
-const { value } = useField(() => props.name)
+const { value, errors } = useField(() => props.name)
 
 const inputs = ref<HTMLInputElement[]>([])
 const digits = ref(Array(6).fill(''))
@@ -48,5 +48,6 @@ watch(otpCode, newVal => {
                 @keydown="moveToPrev($event, index)"
             >
         </div>
+        <span class="text-error-1 mt-2 text-caption-2" v-if="errors[0]">{{ errors[0] }}</span>
     </div>
 </template>
