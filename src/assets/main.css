@@ -12,3 +12,10 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.login {
+  background: url('@/assets/images/login.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

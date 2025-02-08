@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+declare module 'vue-router' {
+  interface RouteMeta {
+    noSidebar?: boolean
+  }
+}
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -17,6 +23,9 @@ const router = createRouter({
       path: '/login',
       name: 'Login',
       component: () => import('@/views/login.vue'),
+      meta: {
+        noSidebar: true,
+      }
     }
   ],
 })

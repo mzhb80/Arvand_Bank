@@ -14,12 +14,14 @@ const startOffsetClass = computed(() => {
   if (canShowText.value) return 'start-250px'
   return 'start-100px'
 })
+
+const showSidebar = computed(() => !router.currentRoute.value.meta.noSidebar)
 </script>
 
 <template>
   <div class="flex">
-    <Sidebar class="shrink-0" />
-    <div class="grow min-w-0 absolute" :class="startOffsetClass">
+    <Sidebar v-if="showSidebar" class="shrink-0" />
+    <div class="grow min-w-0 absolute inset-0" :class="startOffsetClass">
       <RouterView />
     </div>
   </div>
