@@ -6,6 +6,7 @@ import { useForm } from 'vee-validate';
 import InputNumber from '@/components/InputNumber.vue';
 import TwoFACode from '@/components/TwoFACode.vue';
 import BaseButton from '@/components/base/BaseButton.vue';
+import BaseLogo from '@/components/base/BaseLogo.vue';
 
 useForm({
     initialValues: {
@@ -238,5 +239,7 @@ useForm({
             <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="text" size="48">تست</BaseButton>
             <BaseButton :append-icon="Bank" :prepend-icon="Bank" color="neutral" disabled style-type="text" size="56">تست</BaseButton>
         </div>
+        <BaseLogo class="h-47px" />
+        <BaseLogo typography class="h-47px" />
     </div>
 </template>

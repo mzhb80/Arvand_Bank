@@ -14,7 +14,8 @@ export default defineConfig({
     vue({
       template: {
         transformAssetUrls: {
-          BaseIcon: ['src']
+          BaseIcon: ['src'],
+          img: ['src']
         },
       },
     }),
